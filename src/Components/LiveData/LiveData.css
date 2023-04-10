@@ -21,6 +21,11 @@
   position: absolute;
 }
 
+.eth-price {
+  margin-top: -10px;
+  margin-bottom: -10px;
+}
+
 .image-text {
   display: flex;
   align-items: center;

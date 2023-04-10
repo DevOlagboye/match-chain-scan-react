@@ -6,6 +6,7 @@ const LiveData = () => {
   return (
     <>
       <div className="live-data-container">
+        <h5 className="eth-price">ETH Price: </h5>
         <div className="blocks-data">
           <div className="transactions">
             <div className="image-text">
