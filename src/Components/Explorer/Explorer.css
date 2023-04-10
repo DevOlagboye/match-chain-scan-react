@@ -17,3 +17,12 @@
   color: #fff;
   font-size: 23px;
 }
+
+.explorer-search-input {
+  padding: 10px 0px 0px 30px;
+}
+
+.explorer-search-input input {
+  width: 500px;
+  height: 35px;
+}
