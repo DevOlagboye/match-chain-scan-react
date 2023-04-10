@@ -55,3 +55,9 @@
 .explorer-search-input button:hover {
   cursor: pointer;
 }
+
+@media (max-width: 600px) {
+  .explorer-search-input input {
+    width: 300px;
+  }
+}
