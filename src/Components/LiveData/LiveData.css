@@ -1,0 +1,47 @@
+.live-data-container {
+  background: #fff;
+  margin-left: 60px;
+  width: 70%;
+  height: 140px;
+  margin-top: -70px;
+  box-shadow: 2px 10px 20px #e9e1e1;
+  border-radius: 12px;
+  padding: 15px;
+}
+
+.transactions {
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+}
+
+.blocks-data hr {
+  border: 1px #eceff4 solid;
+}
+
+.image-text {
+  display: flex;
+  align-items: center;
+}
+
+.image-text img {
+  margin-right: 10px;
+}
+
+.image-text p {
+  margin-top: -19px;
+}
+
+.gas-fee p {
+  margin-top: -19px;
+}
+
+.image-text img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.title {
+  color: #939ca5;
+}

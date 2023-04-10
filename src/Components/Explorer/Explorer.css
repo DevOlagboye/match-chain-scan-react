@@ -50,6 +50,7 @@
   color: #fff;
   font-size: 20px;
   margin-left: -10px;
+  border: 1px solid #fff;
 }
 
 .explorer-search-input button:hover {
