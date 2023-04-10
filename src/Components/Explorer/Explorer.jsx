@@ -2,7 +2,11 @@ import React from "react";
 import "./Explorer.css";
 
 const Explorer = () => {
-  return <div>Explorer</div>;
+  return (
+    <div className="explorer-container">
+      <div className="explorer-search">Explorer</div>
+    </div>
+  );
 };
 
 export default Explorer;

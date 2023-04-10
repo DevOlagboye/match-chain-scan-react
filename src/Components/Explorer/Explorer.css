@@ -1,0 +1,13 @@
+.explorer-container {
+  margin-top: 90px;
+}
+
+.explorer-search {
+  background: url("../../Assets/images/bg_home_top.png");
+  background-color: #323232;
+  height: 300px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  margin-top: -70px;
+}
