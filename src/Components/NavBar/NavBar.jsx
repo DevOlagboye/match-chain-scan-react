@@ -6,13 +6,13 @@ const NavBar = () => {
   return (
     <>
       <header className="header-container">
-        <nav>
+        <nav className="nav-items">
           <div className="logo">
             <a href="##">
               <img src={matchLabs} alt="" />
             </a>
           </div>
-          <ul className="nav-items">
+          <ul className="nav-list">
             <li>
               <a href="##">Blockchain</a>
             </li>
