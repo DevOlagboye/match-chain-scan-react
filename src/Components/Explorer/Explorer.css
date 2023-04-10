@@ -13,16 +13,45 @@
 }
 
 .explorer-text {
-  padding: 50px 0px 0px 30px;
+  padding: 50px 0px 0px 60px;
   color: #fff;
   font-size: 23px;
 }
 
 .explorer-search-input {
-  padding: 10px 0px 0px 30px;
+  padding: 10px 0px 0px 60px;
+  display: flex;
+  align-items: center;
 }
 
 .explorer-search-input input {
   width: 500px;
-  height: 35px;
+  height: 47px;
+  border-radius: 5px;
+  border: none;
+  padding-left: 10px;
+}
+
+.explorer-search-input input::placeholder {
+  color: #b7b8ba;
+  font-family: "Nanum Gothic Coding", monospace;
+}
+
+.explorer-search-input input:focus {
+  outline: none;
+}
+
+.explorer-search-input button {
+  height: 50px;
+  width: 45px;
+  border-radius: 5px;
+  border: none;
+  background: #fe891b;
+  color: #fff;
+  font-size: 20px;
+  margin-left: -10px;
+}
+
+.explorer-search-input button:hover {
+  cursor: pointer;
 }
