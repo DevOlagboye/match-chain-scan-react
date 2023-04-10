@@ -17,6 +17,8 @@
 
 .blocks-data hr {
   border: 1px #eceff4 solid;
+  width: 30%;
+  position: absolute;
 }
 
 .image-text {
