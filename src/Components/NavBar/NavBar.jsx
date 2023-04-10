@@ -23,9 +23,7 @@ const NavBar = () => {
               <a href="##">APIs</a>
             </li>
             <li>
-              <a href="##">
-                <span>.</span>Matchain
-              </a>
+              <a href="##">Matchain</a>
             </li>
           </ul>
         </nav>
