@@ -20,34 +20,39 @@ const LiveData = () => {
   return (
     <>
       <div className="live-data-container">
-        <h5 className="eth-price">ETH Price: {price.toLocaleString()}</h5>
-        <div className="blocks-data">
-          <div className="transactions">
-            <div className="image-text">
-              <img src={transactionImage} alt="" />
-              <div>
-                <h5 className="title">TRANSACTIONS</h5>
-                <p>646</p>
+        <h5 className="eth-price">ETH Price: {price}</h5>
+        <div className="data-container">
+          <div className="blocks-data">
+            <div className="transactions">
+              <div className="image-text">
+                <img src={transactionImage} alt="" />
+                <div>
+                  <h5 className="title">TRANSACTIONS</h5>
+                  <p>646</p>
+                </div>
+              </div>
+              <div className="gas-fee">
+                <h5 className="title">GAS PRICE</h5>
+                <p>Gwei</p>
               </div>
             </div>
-            <div className="gas-fee">
-              <h5 className="title">GAS PRICE</h5>
-              <p>Gwei</p>
+            <hr />
+            <div className="transactions">
+              <div className="image-text">
+                <img src={blockImage} alt="" />
+                <div>
+                  <h5 className="title">LATEST BLOCK</h5>
+                  <p>406,805</p>
+                </div>
+              </div>
+              <div className="gas-fee">
+                <h5 className="title">WALLET ADDRESS</h5>
+                <p>123</p>
+              </div>
             </div>
           </div>
-          <hr />
-          <div className="transactions">
-            <div className="image-text">
-              <img src={blockImage} alt="" />
-              <div>
-                <h5 className="title">LATEST BLOCK</h5>
-                <p>406,805</p>
-              </div>
-            </div>
-            <div className="gas-fee">
-              <h5 className="title">WALLET ADDRESS</h5>
-              <p>123</p>
-            </div>
+          <div className="graph">
+            <h5>Graph</h5>
           </div>
         </div>
       </div>

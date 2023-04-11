@@ -9,15 +9,23 @@
   padding: 15px;
 }
 
+.data-container {
+  display: flex;
+  justify-content: space-between;
+}
+
 .transactions {
   display: flex;
   justify-content: space-between;
-  width: 40%;
+}
+
+.blocks-data {
+  width: 50%;
 }
 
 .blocks-data hr {
   border: 1px #eceff4 solid;
-  width: 30%;
+  width: 40%;
   position: absolute;
 }
 
