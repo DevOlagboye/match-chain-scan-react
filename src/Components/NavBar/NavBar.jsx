@@ -1,16 +1,21 @@
 import React, { useState, useContext, useEffect } from "react";
 import { ethers } from "ethers";
-import { WalletContext } from "../../Context/WalletContext";
+import { WalletContext, BalanceContext } from "../../Context/WalletContext";
 import matchLabs from "../../Assets/images/match_logo.svg";
 import "./NavBar.css";
 
 const NavBar = () => {
   let [wallet, setWallet] = useContext(WalletContext);
-  let [mainBalance, setBalance] = useState(null);
+  let [mainBalance, setBalance] = useContext(WalletContext);
   const provider = new ethers.providers.Web3Provider(window.ethereum);
   const connectWallet = async (e) => {
     e.preventDefault();
     const accounts = await provider.send("eth_requestAccounts", []);
+    const balance = await provider.getBalance(accounts[0]);
+    const balanceInEther = ethers.utils.formatEther(balance);
+    mainBalance = balanceInEther;
+    setBalance(balanceInEther);
+    console.log(mainBalance);
     wallet = localStorage.setItem("walletKey", accounts[0]);
     setWallet(wallet);
     console.log(wallet);
@@ -22,16 +27,6 @@ const NavBar = () => {
   };
 
   let newWallet = localStorage.getItem("walletKey");
-
-  const getBalance = async () => {
-    const accounts = await provider.send("eth_requestAccounts", []);
-    const balance = await provider.getBalance(accounts[0]);
-    const balanceInEther = ethers.utils.formatEther(balance);
-    mainBalance = balanceInEther;
-    setBalance(balanceInEther);
-    console.log(mainBalance);
-  };
-  getBalance();
   return (
     <>
       <header className="header-container">

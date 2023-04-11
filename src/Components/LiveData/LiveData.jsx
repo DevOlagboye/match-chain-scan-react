@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import transactionImage from "../../Assets/images/icon_transaction.png";
 import blockImage from "../../Assets/images/icon_block.png";
+import { WalletContext, BalanceContext } from "../../Context/WalletContext";
 import axios from "axios";
+import { ethers } from "ethers";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -25,6 +27,9 @@ ChartJS.register(
 );
 
 const LiveData = () => {
+  let [wallet, setWallet] = useContext(WalletContext);
+  let newWallet = localStorage.getItem("walletKey");
+  let [mainBalance, setBalance] = useContext(WalletContext);
   const options = {
     responsive: true,
     plugins: {
@@ -62,7 +67,10 @@ const LiveData = () => {
   return (
     <>
       <div className="live-data-container">
-        <h5 className="eth-price">ETH Price: {price}</h5>
+        <div className="personal-details">
+          <h5 className="eth-price">ETH Price: {price}</h5>
+          <h5>Address: {newWallet ? `${newWallet}` : " "}</h5>
+        </div>
         <div className="data-container">
           <div className="blocks-data">
             <div className="transactions">

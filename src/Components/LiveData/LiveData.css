@@ -2,7 +2,7 @@
   background: #fff;
   margin-left: 60px;
   width: 70%;
-  height: 140px;
+  height: 155px;
   margin-top: -70px;
   box-shadow: 2px 10px 20px #e9e1e1;
   border-radius: 12px;
@@ -29,10 +29,11 @@
   position: absolute;
 }
 
-.eth-price {
-  margin-top: -10px;
-  margin-bottom: 5px;
-  padding-top: 10px;
+.personal-details {
+  margin-top: -25px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 .image-text {
