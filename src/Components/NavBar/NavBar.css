@@ -14,6 +14,10 @@
   border-radius: 50%;
 }
 
+.disconnect {
+  margin-left: 10px;
+}
+
 .circle-container {
   display: flex;
   align-items: center;
