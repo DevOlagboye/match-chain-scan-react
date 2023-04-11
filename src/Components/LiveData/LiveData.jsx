@@ -1,6 +1,16 @@
 import React, { useState, useEffect } from "react";
 import transactionImage from "../../Assets/images/icon_transaction.png";
 import blockImage from "../../Assets/images/icon_block.png";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+} from "chart.js";
 import axios from "axios";
 import "./LiveData.css";
 const LiveData = () => {
