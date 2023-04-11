@@ -4,12 +4,13 @@ import blockImage from "../../Assets/images/icon_block.png";
 import axios from "axios";
 import "./LiveData.css";
 const LiveData = () => {
-  const [price, setPrice] = useState(0);
+  const [price, setPrice] = useState("");
   const getEtherPrice = async () => {
     try {
       const data = await axios.get(
         `https://api.etherscan.io/api?module=stats&action=ethprice&apikey=${process.env.REACT_APP_API_KEY}`
       );
+      console.log(data.data.result);
       setPrice(data.data.result.ethusd);
     } catch (e) {
       console.error(e);
@@ -19,7 +20,7 @@ const LiveData = () => {
   return (
     <>
       <div className="live-data-container">
-        <h5 className="eth-price">ETH Price: {price}</h5>
+        <h5 className="eth-price">ETH Price: {price.toLocaleString()}</h5>
         <div className="blocks-data">
           <div className="transactions">
             <div className="image-text">
