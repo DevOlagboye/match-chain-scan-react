@@ -43,7 +43,6 @@ const LiveData = () => {
       const data = await axios.get(
         `https://api.etherscan.io/api?module=stats&action=ethprice&apikey=${process.env.REACT_APP_API_KEY}`
       );
-      console.log(data.data.result);
       setPrice(data.data.result.ethusd);
     } catch (e) {
       console.error(e);

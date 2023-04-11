@@ -7,6 +7,26 @@
   box-shadow: 2px 2px 2px #2e2d2d;
 }
 
+.circle {
+  width: 7px;
+  margin-right: 10px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.circle-container {
+  display: flex;
+  align-items: center;
+}
+
+.circle.red {
+  background: red;
+}
+
+.circle.green {
+  background: green;
+}
+
 .nav-items {
   display: flex;
   margin-top: 7px;

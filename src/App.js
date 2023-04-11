@@ -1,16 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
-import NavBar from './Components/NavBar/NavBar';
-import Explorer from './Components/Explorer/Explorer';
-import LiveData from './Components/LiveData/LiveData';
+import logo from "./logo.svg";
+import "./App.css";
+import NavBar from "./Components/NavBar/NavBar";
+import Explorer from "./Components/Explorer/Explorer";
+import LiveData from "./Components/LiveData/LiveData";
+import { WalletContext } from "./Context/WalletContext";
+import { useState } from "react";
 
 function App() {
+  const [wallet, setWallet] = useState(null);
   return (
-    <>
-      <NavBar/>
-      <Explorer/>
-      <LiveData/>
-    </>
+      <WalletContext.Provider value={[wallet, setWallet]}>
+        <NavBar />
+        <Explorer />
+        <LiveData />
+      </WalletContext.Provider>
   );
 }
 
