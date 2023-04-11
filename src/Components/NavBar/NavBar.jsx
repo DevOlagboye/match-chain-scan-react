@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { ethers } from "ethers";
 import { WalletContext } from "../../Context/WalletContext";
 import matchLabs from "../../Assets/images/match_logo.svg";
@@ -10,10 +10,17 @@ const NavBar = () => {
     e.preventDefault();
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const accounts = await provider.send("eth_requestAccounts", []);
-    wallet = accounts[0];
+    wallet = localStorage.setItem("walletKey", accounts[0]);
     setWallet(wallet);
     console.log(wallet);
   };
+
+  const disConnect = () => {
+    localStorage.removeItem("walletKey");
+    window.location.reload();
+  };
+
+  let newWallet = localStorage.getItem("walletKey");
   return (
     <>
       <header className="header-container">
@@ -35,11 +42,16 @@ const NavBar = () => {
             </li>
             <li>
               <div className="circle-container">
-                <div className={wallet ? "circle green" : "circle red"}></div>
+                <div
+                  className={newWallet ? "circle green" : "circle red"}
+                ></div>
                 <a href="##" onClick={connectWallet}>
-                  {console.log(wallet)}
-
-                  {wallet ? "Connected" : "Connect Wallet"}
+                  {console.log(newWallet)}
+                  {newWallet ? "Connected" : "Connect Wallet"}
+                </a>
+                <a href="##" onClick={disConnect}>
+                  {console.log(newWallet)}
+                  {newWallet ? "Disconnect" : ""}
                 </a>
               </div>
             </li>
