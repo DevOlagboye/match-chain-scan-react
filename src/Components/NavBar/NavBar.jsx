@@ -14,8 +14,6 @@ const NavBar = () => {
     const balance = await provider.getBalance(accounts[0]);
     const balanceInEther = ethers.utils.formatEther(balance);
     mainBalance = balanceInEther;
-    setBalance(balanceInEther);
-    console.log(mainBalance);
     wallet = localStorage.setItem("walletKey", accounts[0]);
     setWallet(wallet);
     console.log(wallet);
