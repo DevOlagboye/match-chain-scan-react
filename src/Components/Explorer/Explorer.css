@@ -53,6 +53,11 @@
   border: 1px solid #fff;
 }
 
+.text-white {
+  color: #fff;
+  padding-left: 60px;
+}
+
 .explorer-search-input button:hover {
   cursor: pointer;
 }
