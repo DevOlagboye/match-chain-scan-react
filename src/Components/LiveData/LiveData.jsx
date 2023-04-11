@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import transactionImage from "../../Assets/images/icon_transaction.png";
 import blockImage from "../../Assets/images/icon_block.png";
+import axios from "axios";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -11,9 +12,31 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-import axios from "axios";
+import { Line } from "react-chartjs-2";
 import "./LiveData.css";
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend
+);
+
 const LiveData = () => {
+  const options = {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: "top",
+      },
+      title: {
+        display: false,
+      },
+    },
+  };
+  const labels = ["January", "February", "March"];
   const [price, setPrice] = useState("");
   const getEtherPrice = async () => {
     try {
@@ -25,6 +48,16 @@ const LiveData = () => {
     } catch (e) {
       console.error(e);
     }
+  };
+  const data = {
+    labels,
+    datasets: [
+      {
+        label: "ETH Price",
+        data: [1200, 1350, `${price}`],
+        borderColor: " #FE891B",
+      },
+    ],
   };
   getEtherPrice();
   return (
@@ -62,7 +95,7 @@ const LiveData = () => {
             </div>
           </div>
           <div className="graph">
-            <h5>Graph</h5>
+            <Line options={options} data={data} className="line-graph" />
           </div>
         </div>
       </div>

@@ -61,3 +61,8 @@
 .title {
   color: #939ca5;
 }
+
+.line-graph {
+  margin-top: -10px;
+  width: 50%;
+}
