@@ -13,6 +13,17 @@ const LiveBlock = () => {
             <h5>Latest Blocks</h5>
           </div>
           <hr className="latest-block-hr" />
+          <div className="blocks-details">
+            <div className="block-box">
+              <img src={blockImage} alt="" className="block-box-image" />
+            </div>
+            <a href="##" className="block-link">
+              17031610
+            </a>
+            <a href="##" className="block-address">
+              Address
+            </a>
+          </div>
         </div>
         <div className="latest-transaction">
           <div className="image-text">
