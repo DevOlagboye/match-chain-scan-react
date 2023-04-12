@@ -1,0 +1,24 @@
+.live-block-container {
+  padding: 30px 50px 30px 60px;
+}
+
+.latest-block,
+.latest-transaction {
+  width: 500px;
+  padding: 10px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 2px 10px 10px #e9e1e1;
+}
+
+.latest-block-hr {
+  border: 1px #eceff4 solid;
+  margin-top: -3px;
+}
+
+.blocks-transaction {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 300px;
+}
