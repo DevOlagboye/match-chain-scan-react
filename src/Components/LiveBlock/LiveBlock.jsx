@@ -20,7 +20,7 @@ const LiveBlock = () => {
   const getTranList = async () => {
     try {
       let transactionList = await axios.get(
-        `https://api-sepolia.etherscan.io/api?module=account&action=txlist&address=${newWallet}&startblock=0&endblock=99999999&page=1&offset=3&sort=asc&apikey=${process.env.REACT_APP_API_KEY}`
+        `https://api-sepolia.etherscan.io/api?module=account&action=txlist&address=${newWallet}&startblock=0&endblock=99999999&page=1&offset=5&sort=asc&apikey=${process.env.REACT_APP_API_KEY}`
       );
       localStorage.setItem(
         "transactionList",
@@ -93,7 +93,7 @@ const LiveBlock = () => {
                       />
                     </div>
                     <a
-                      href={`https://sepolia.etherscan.io/${tranList.blockNumber}`}
+                      href={`https://sepolia.etherscan.io/block/${tranList.blockNumber}`}
                       className="block-link"
                     >
                       {tranList.blockNumber}

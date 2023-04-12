@@ -45,6 +45,7 @@
 
 .block-box-image {
   width: 25px;
+  padding-right: 10px;
   display: block;
   margin: auto;
   padding-top: 8px;
