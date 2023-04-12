@@ -45,4 +45,11 @@
 
 .block-link {
   margin-right: 100px;
+  text-decoration: none;
+  color: #fe891b;
+}
+
+.block-address {
+  text-decoration: none;
+  color: #fe891b;
 }
