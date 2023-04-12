@@ -3,7 +3,6 @@ import transactionImage from "../../Assets/images/icon_transaction.png";
 import blockImage from "../../Assets/images/icon_block.png";
 import { WalletContext, BalanceContext } from "../../Context/WalletContext";
 import axios from "axios";
-import { ethers } from "ethers";
 import {
   Chart as ChartJS,
   CategoryScale,
