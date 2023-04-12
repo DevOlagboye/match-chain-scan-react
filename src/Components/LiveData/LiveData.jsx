@@ -63,7 +63,9 @@ const LiveData = () => {
       },
     ],
   };
-  getEtherPrice();
+  useEffect(() => {
+    getEtherPrice();
+  }, []);
   return (
     <>
       <div className="live-data-container">
