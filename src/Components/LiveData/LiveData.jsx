@@ -1,7 +1,11 @@
 import React, { useState, useEffect, useContext } from "react";
 import transactionImage from "../../Assets/images/icon_transaction.png";
 import blockImage from "../../Assets/images/icon_block.png";
-import { WalletContext, BalanceContext } from "../../Context/WalletContext";
+import {
+  WalletContext,
+  BalanceContext,
+  TranSactionsContext,
+} from "../../Context/WalletContext";
 import axios from "axios";
 import {
   Chart as ChartJS,
@@ -29,6 +33,8 @@ const LiveData = () => {
   let [wallet, setWallet] = useContext(WalletContext);
   let newWallet = localStorage.getItem("walletKey");
   let [mainBalance, setBalance] = useContext(WalletContext);
+  const labels = ["January", "February", "March"];
+  let [price, setPrice] = useState("");
   const options = {
     responsive: true,
     plugins: {
@@ -40,14 +46,15 @@ const LiveData = () => {
       },
     },
   };
-  const labels = ["January", "February", "March"];
-  const [price, setPrice] = useState("");
+
   const getEtherPrice = async () => {
     try {
       const data = await axios.get(
         `https://api-sepolia.etherscan.io/api?module=stats&action=ethprice&apikey=${process.env.REACT_APP_API_KEY}`
       );
-      setPrice(data.data.result.ethusd);
+      price = data.data.result.ethusd;
+      setPrice(price);
+      // setPrice(data.data.result.ethusd);
     } catch (e) {
       console.error(e);
     }
@@ -62,9 +69,8 @@ const LiveData = () => {
       },
     ],
   };
-  useEffect(() => {
-    getEtherPrice();
-  }, []);
+  getEtherPrice();
+
   return (
     <>
       <div className="live-data-container">

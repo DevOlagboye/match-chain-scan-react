@@ -1,11 +1,18 @@
 import React, { useState, useContext, useEffect } from "react";
 import { ethers } from "ethers";
-import { WalletContext, BalanceContext } from "../../Context/WalletContext";
+import {
+  WalletContext,
+  BalanceContext,
+  TranSactionsContext,
+} from "../../Context/WalletContext";
 import matchLabs from "../../Assets/images/match_logo.svg";
+import axios from "axios";
 import "./NavBar.css";
 
 const NavBar = () => {
   let [wallet, setWallet] = useContext(WalletContext);
+
+  let newWallet = localStorage.getItem("walletKey");
   let [mainBalance, setBalance] = useContext(WalletContext);
   const provider = new ethers.providers.Web3Provider(window.ethereum);
   const connectWallet = async (e) => {
@@ -17,14 +24,14 @@ const NavBar = () => {
     wallet = localStorage.setItem("walletKey", accounts[0]);
     setWallet(wallet);
     console.log(wallet);
+    window.location.reload();
   };
 
   const disConnect = () => {
     localStorage.removeItem("walletKey");
+    localStorage.removeItem("transactionList");
     window.location.reload();
   };
-
-  let newWallet = localStorage.getItem("walletKey");
   return (
     <>
       <header className="header-container">
