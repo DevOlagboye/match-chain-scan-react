@@ -51,6 +51,31 @@ const LiveBlock = () => {
             <img src={transactionImage} alt="" />
             <h5>Latest Transactions</h5>
           </div>
+          <hr className="latest-block-hr" />
+          <div className="blocks-details">
+            <div className="block-box">
+              <img src={transactionImage} alt="" className="block-box-image" />
+            </div>
+            <a href="##" className="block-link">
+              122222
+            </a>
+            <div className="address-to-from">
+              <p>From:</p>
+              <a
+                href={`https://sepolia.etherscan.io/${newWallet}`}
+                className="block-address"
+              >
+                {newWallet}
+              </a>
+              <p>To:</p>
+              <a
+                href={`https://sepolia.etherscan.io/${newWallet}`}
+                className="block-address"
+              >
+                {newWallet}
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
