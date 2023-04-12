@@ -24,6 +24,10 @@
   margin-top: -3px;
 }
 
+.divider {
+  border: 1px #eceff4 solid;
+}
+
 .blocks-transaction {
   display: flex;
   justify-content: space-evenly;
@@ -62,7 +66,16 @@
   color: #fe891b;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 250px;
+  max-width: 90%;
+}
+
+.amount {
+  background: #fe891b;
+  padding: 10px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 .address-to-from {

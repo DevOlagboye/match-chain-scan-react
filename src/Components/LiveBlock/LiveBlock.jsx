@@ -4,6 +4,7 @@ import blockImage from "../../Assets/images/icon_block.png";
 import axios from "axios";
 import { TranSactionsContext } from "../../Context/WalletContext";
 import "./LiveBlock.css";
+import { ethers } from "ethers";
 
 const LiveBlock = () => {
   let [minedBlocks, setMinedBlocks] = useState([]);
@@ -83,7 +84,7 @@ const LiveBlock = () => {
             ? "No Transaction Yet"
             : tranSactionLists.map((tranList) => (
                 <>
-                  <div className="blocks-details">
+                  <div className="blocks-details" key={tranList.blockNumber}>
                     <div className="block-box">
                       <img
                         src={transactionImage}
@@ -100,19 +101,22 @@ const LiveBlock = () => {
                     <div className="address-to-from">
                       <p>From:</p>
                       <a
-                        href={`https://sepolia.etherscan.io/${newWallet}`}
+                        href={`https://sepolia.etherscan.io/address/${tranList.from}`}
                         className="block-address"
                       >
-                        {newWallet}
+                        {tranList.from}
                       </a>
                       <p>To:</p>
                       <a
-                        href={`https://sepolia.etherscan.io/${newWallet}`}
+                        href={`https://sepolia.etherscan.io/address/${tranList.to}`}
                         className="block-address"
                       >
-                        {newWallet}
+                        {tranList.to}
                       </a>
                     </div>
+                    <span className="amount">
+                      {ethers.utils.formatEther(tranList.value)}ETH
+                    </span>
                   </div>
                 </>
               ))}
