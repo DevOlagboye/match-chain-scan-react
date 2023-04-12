@@ -5,6 +5,7 @@ import Explorer from "./Components/Explorer/Explorer";
 import LiveData from "./Components/LiveData/LiveData";
 import { WalletContext, BalanceContext } from "./Context/WalletContext";
 import { useState } from "react";
+import LiveBlock from "./Components/LiveBlock/LiveBlock";
 
 function App() {
   const [wallet, setWallet] = useState(null);
@@ -15,6 +16,7 @@ function App() {
         <NavBar />
         <Explorer />
         <LiveData />
+        <LiveBlock />
       </WalletContext.Provider>{" "}
     </BalanceContext.Provider>
   );
