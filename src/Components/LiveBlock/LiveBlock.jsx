@@ -6,6 +6,7 @@ import "./LiveBlock.css";
 
 const LiveBlock = () => {
   let [minedBlocks, setMinedBlocks] = useState([]);
+  let [tranLists, setTranLists] = useState([]);
   let newWallet = localStorage.getItem("walletKey");
   const getMinedBlocks = async () => {
     let getMinedBlocksData = await axios.get(
@@ -14,7 +15,14 @@ const LiveBlock = () => {
     minedBlocks = getMinedBlocksData.result;
     console.log(getMinedBlocksData.data);
   };
+  const getTranList = async () => {
+    let transactionList = await axios.get(
+      `https://api-sepolia.etherscan.io/api?module=account&action=txlist&address=${newWallet}&startblock=0&endblock=99999999&page=1&offset=10&sort=asc&apikey=${process.env.REACT_APP_API_KEY}`
+    );
+    console.log(transactionList.data);
+  };
   getMinedBlocks();
+  getTranList();
   return (
     <div className="live-block-container">
       <div className="blocks-transaction">
