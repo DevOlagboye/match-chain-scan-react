@@ -19,8 +19,9 @@
 .blocks-transaction {
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 300px;
+  gap: 240px;
 }
 
 .block-box {

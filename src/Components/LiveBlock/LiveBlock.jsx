@@ -1,9 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import transactionImage from "../../Assets/images/icon_transaction.png";
 import blockImage from "../../Assets/images/icon_block.png";
+import axios from "axios";
 import "./LiveBlock.css";
 
 const LiveBlock = () => {
+  let [minedBlocks, setMinedBlocks] = useState([]);
+  let newWallet = localStorage.getItem("walletKey");
+  const getMinedBlocks = async () => {
+    let getMinedBlocksData = await axios.get(
+      `https://api-sepolia.etherscan.io/api?module=account&action=getminedblocks&address=${newWallet}&blocktype=blocks&page=1&offset=10&apikey=${process.env.REACT_APP_API_KEY}`
+    );
+    minedBlocks = getMinedBlocksData.result;
+    console.log(getMinedBlocksData.data);
+  };
+  getMinedBlocks();
   return (
     <div className="live-block-container">
       <div className="blocks-transaction">
@@ -13,17 +24,27 @@ const LiveBlock = () => {
             <h5>Latest Blocks</h5>
           </div>
           <hr className="latest-block-hr" />
-          <div className="blocks-details">
-            <div className="block-box">
-              <img src={blockImage} alt="" className="block-box-image" />
-            </div>
-            <a href="##" className="block-link">
-              17031610
-            </a>
-            <a href="##" className="block-address">
-              Address
-            </a>
-          </div>
+          {minedBlocks.length < 1
+            ? "No Blocks Mined Yet"
+            : minedBlocks.map((minedBlock) => (
+                <div className="blocks-details">
+                  <div className="block-box">
+                    <img src={blockImage} alt="" className="block-box-image" />
+                  </div>
+                  <a
+                    href={`https://sepolia.etherscan.io/${minedBlock.blockNumber}`}
+                    className="block-link"
+                  >
+                    {minedBlock.blockNumber}
+                  </a>
+                  <a
+                    href={`https://sepolia.etherscan.io/${newWallet}`}
+                    className="block-address"
+                  >
+                    {newWallet}
+                  </a>
+                </div>
+              ))}
         </div>
         <div className="latest-transaction">
           <div className="image-text">

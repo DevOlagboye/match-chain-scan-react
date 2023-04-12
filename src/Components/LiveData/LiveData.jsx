@@ -45,7 +45,7 @@ const LiveData = () => {
   const getEtherPrice = async () => {
     try {
       const data = await axios.get(
-        `https://api.etherscan.io/api?module=stats&action=ethprice&apikey=${process.env.REACT_APP_API_KEY}`
+        `https://api-sepolia.etherscan.io/api?module=stats&action=ethprice&apikey=${process.env.REACT_APP_API_KEY}`
       );
       setPrice(data.data.result.ethusd);
     } catch (e) {
