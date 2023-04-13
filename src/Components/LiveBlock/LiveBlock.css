@@ -83,3 +83,13 @@
   display: flex;
   flex-direction: column;
 }
+
+@media (max-width: 600px) {
+  .latest-transaction {
+    width: 100%;
+    overflow: hidden;
+  }
+  .blocks-details {
+    overflow-x: scroll;
+  }
+}

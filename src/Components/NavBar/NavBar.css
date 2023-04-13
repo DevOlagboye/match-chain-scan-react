@@ -58,7 +58,12 @@
 }
 
 @media (max-width: 600px) {
-  .nav-list {
+  .desktop {
     display: none;
+  }
+  .circle-container {
+    position: absolute;
+    right: 10px;
+    top: 20px;
   }
 }

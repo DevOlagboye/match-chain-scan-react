@@ -49,13 +49,13 @@ const NavBar = () => {
             </a>
           </div>
           <ul className="nav-list">
-            <li>
+            <li className="desktop">
               <a href="##">Blockchain</a>
             </li>
-            <li>
+            <li className="desktop">
               <a href="##">Tokens</a>
             </li>
-            <li>
+            <li className="desktop">
               <a href="##">APIs</a>
             </li>
             <li>

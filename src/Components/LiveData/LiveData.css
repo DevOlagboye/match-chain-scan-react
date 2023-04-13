@@ -77,8 +77,9 @@
 
 @media (max-width: 600px) {
   .live-data-container {
-    width: 100%;
-    margin-left: 0px;
+    width: 90%;
+    margin-left: 5px;
+    padding-bottom: 30px;
   }
   .wallet-top {
     overflow: hidden;
@@ -88,7 +89,7 @@
   .line-graph {
     display: none !important;
   }
-  .transactions {
+  .blocks-data {
     width: 100%;
   }
 }
