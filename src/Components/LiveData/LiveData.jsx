@@ -35,6 +35,7 @@ const LiveData = () => {
   let newWallet = localStorage.getItem("walletKey");
   let [mainBalance, setBalance] = useContext(WalletContext);
   let [gasPrice, setGasPrice] = useState(null);
+  let [ethLatestBlock, setEthLatestBlock] = useState("");
   const labels = ["January", "February", "March"];
   let [price, setPrice] = useState("");
   const options = {
@@ -55,8 +56,9 @@ const LiveData = () => {
       const data = await axios.get(
         `https://api-sepolia.etherscan.io/api?module=stats&action=ethprice&apikey=${process.env.REACT_APP_API_KEY}`
       );
-      price = data.data.result.ethusd;
-      setPrice(price);
+      let convertedPrice = data.data.result.ethusd;
+      //console.log(`${convertedPrice.toLocaleString()}`);
+      setPrice(convertedPrice);
       // setPrice(data.data.result.ethusd);
     } catch (e) {
       console.error(e);
@@ -82,9 +84,20 @@ const LiveData = () => {
     const roundedValue = Math.round(gweiValue);
     setGasPrice(roundedValue);
   };
+  const getBlockNumber = async () => {
+    const ethBlockNumber = await axios.get(
+      `https://api.etherscan.io/api?module=proxy&action=eth_blockNumber&apikey=${process.env.REACT_APP_API_KEY}`
+    );
+    const hexTodecimal = (hex) => parseInt(hex, 16);
+    const ethConvertedBlockNumber = hexTodecimal(ethBlockNumber.data.result);
+    ethLatestBlock = `${ethConvertedBlockNumber.toLocaleString()}`;
+    //console.log(`${ethConvertedBlockNumber.toLocaleString()}`);
+    setEthLatestBlock(ethLatestBlock);
+  };
   getEtherPrice();
   useEffect(() => {
     getTransactionNumber();
+    getBlockNumber();
   }, []);
   return (
     <>
@@ -114,7 +127,7 @@ const LiveData = () => {
                 <img src={blockImage} alt="" />
                 <div>
                   <h5 className="title">LATEST BLOCK</h5>
-                  <p>406,805</p>
+                  <p>{ethLatestBlock}</p>
                 </div>
               </div>
               <div className="gas-fee">

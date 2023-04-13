@@ -20,7 +20,7 @@ const LiveBlock = () => {
   const getTranList = async () => {
     try {
       let transactionList = await axios.get(
-        `https://api-sepolia.etherscan.io/api?module=account&action=txlist&address=${newWallet}&startblock=0&endblock=99999999&page=1&offset=5&sort=asc&apikey=${process.env.REACT_APP_API_KEY}`
+        `https://api-sepolia.etherscan.io/api?module=account&action=txlist&address=${newWallet}&startblock=0&endblock=99999999&page=1&offset=5&sort=desc&apikey=${process.env.REACT_APP_API_KEY}`
       );
       localStorage.setItem(
         "transactionList",
@@ -46,7 +46,7 @@ const LiveBlock = () => {
     if (newWallet) {
       getTranList();
     } else {
-      alert("Kindly Connect your wallet");
+      alert("Kindly Connect your wallet and Switch to Sepolia Network");
     }
   }, []);
   return (
