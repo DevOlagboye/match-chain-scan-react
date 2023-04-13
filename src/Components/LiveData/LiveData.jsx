@@ -36,7 +36,7 @@ const LiveData = () => {
   let [mainBalance, setBalance] = useContext(WalletContext);
   let [gasPrice, setGasPrice] = useState(null);
   let [ethLatestBlock, setEthLatestBlock] = useState("");
-  const labels = ["January", "February", "March"];
+  const labels = ["January", "February", "March", "April"];
   let [price, setPrice] = useState("");
   const options = {
     responsive: true,
@@ -69,7 +69,7 @@ const LiveData = () => {
     datasets: [
       {
         label: "ETH Price",
-        data: [1200, 1350, `${price}`],
+        data: [1200, 1350, 1550, `${price}`],
         borderColor: " #FE891B",
       },
     ],
