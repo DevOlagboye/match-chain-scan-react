@@ -101,7 +101,6 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-
         <div className="products-footer">
           <h5>Products & Services</h5>
           <ul>
@@ -143,6 +142,18 @@ const Footer = () => {
             </li>
           </ul>
         </div>
+      </div>
+      <hr className="footer-hr" />
+      <div className="footer-copyright">
+        <h5>Etherscan © {new Date().getFullYear} (A1)</h5>
+        <h5>
+          Donations:{" "}
+          <p className="footer-wallet-address">
+            <a href="https://etherscan.io/address/0xB1f7996edd0E42c2aE788BD6Dc32BEb302b6e850">
+              0xB1f7996edd0E42c2aE788BD6Dc32BEb302b6e850
+            </a>
+          </p>
+        </h5>
       </div>
     </div>
   );

@@ -43,3 +43,19 @@
   text-decoration: none;
   color: #000;
 }
+
+.footer-hr {
+  border: 1px #eceff4 solid;
+}
+
+.footer-copyright {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-wallet-address {
+  overflow: hidden;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  max-width: 250px;
+}
