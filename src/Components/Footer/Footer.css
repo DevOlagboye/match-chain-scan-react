@@ -59,3 +59,7 @@
   text-overflow: ellipsis;
   max-width: 250px;
 }
+
+.footer-map {
+  width: 200px;
+}

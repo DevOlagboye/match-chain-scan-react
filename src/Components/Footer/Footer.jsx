@@ -15,7 +15,7 @@ const Footer = () => {
             Etherscan is a Block Explorer and Analytics Platform for Ethereum,{" "}
             <br />a decentralized smart contracts platform.
           </p>
-          <img src={footerMap} alt="Footer Map" />
+          <img src={footerMap} alt="Footer Map" className="footer-map" />
         </div>
 
         <div className="company-footer">
