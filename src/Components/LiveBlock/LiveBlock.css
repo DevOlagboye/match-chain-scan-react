@@ -3,12 +3,12 @@
 }
 
 .latest-block {
-  width: 400px;
+  width: 600px;
   height: 200px;
   padding: 10px;
   background: #fff;
   border-radius: 5px;
-  box-shadow: 2px 10px 10px #e9e1e1;
+  box-shadow: 2px 5px 10px #ece7e7;
 }
 
 .latest-transaction {
@@ -16,7 +16,7 @@
   padding: 20px;
   background: #fff;
   border-radius: 5px;
-  box-shadow: 2px 10px 10px #e9e1e1;
+  box-shadow: 2px 5px 10px #ece7e7;
 }
 
 .latest-block-hr {
@@ -32,7 +32,7 @@
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  gap: 240px;
+  gap: 20px;
 }
 
 .blocks .block-box {
