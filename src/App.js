@@ -1,4 +1,5 @@
 import "./App.css";
+import { useEffect } from "react";
 import NavBar from "./Components/NavBar/NavBar";
 import Explorer from "./Components/Explorer/Explorer";
 import LiveData from "./Components/LiveData/LiveData";
@@ -15,6 +16,11 @@ function App() {
   const [wallet, setWallet] = useState(null);
   const [balance, setBalance] = useState(null);
   const [tranLists, setTranLists] = useState([]);
+  useEffect(() => {
+    if (!window.ethereum) {
+      alert("Kindly Install Metamask Extension");
+    }
+  }, []);
   return (
     <TranSactionsContext.Provider value={[tranLists, setTranLists]}>
       <BalanceContext.Provider value={[balance, setBalance]}>

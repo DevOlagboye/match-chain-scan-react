@@ -28,11 +28,6 @@ const NavBar = () => {
     localStorage.removeItem("transactionList");
     window.location.reload();
   };
-  useEffect(() => {
-    if (!window.ethereum) {
-      console.log("Kindly Install Metamask Extension");
-    }
-  });
   return (
     <>
       <header className="header-container">
