@@ -67,7 +67,6 @@ const NavBar = () => {
                   {newWallet ? "Connected" : "Connect Wallet"}
                 </a>
                 <a href="##" onClick={disConnect} className="disconnect">
-                  {console.log(newWallet)}
                   {newWallet ? "Disconnect" : ""}
                 </a>
               </div>

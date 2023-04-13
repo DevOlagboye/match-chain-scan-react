@@ -45,6 +45,8 @@ const LiveBlock = () => {
   useEffect(() => {
     if (newWallet) {
       getTranList();
+    } else {
+      alert("Kindly Connect your wallet");
     }
   }, []);
   return (

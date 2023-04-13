@@ -19,6 +19,7 @@ import {
 } from "chart.js";
 import { Line } from "react-chartjs-2";
 import "./LiveData.css";
+import { ethers } from "ethers";
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -33,7 +34,7 @@ const LiveData = () => {
   let [wallet, setWallet] = useContext(WalletContext);
   let newWallet = localStorage.getItem("walletKey");
   let [mainBalance, setBalance] = useContext(WalletContext);
-  let [transactionNumber, setTransactionNumber] = useState(null);
+  let [gasPrice, setGasPrice] = useState(null);
   const labels = ["January", "February", "March"];
   let [price, setPrice] = useState("");
   const options = {
@@ -72,12 +73,14 @@ const LiveData = () => {
     ],
   };
   const getTransactionNumber = async () => {
-    const transactinoNumberData = await axios.get(
-      `https://api-sepolia.etherscan.io/api?module=proxy&action=eth_getTransactionCount&address=${newWallet}&tag=latest&apikey=${process.env.REACT_APP_API_KEY}`
+    const eth_gasPrice_Data = await axios.get(
+      `https://api.etherscan.io/api?module=proxy&action=eth_gasPrice&apikey=${process.env.REACT_APP_API_KEY}`
     );
     const hexTodecimal = (hex) => parseInt(hex, 16);
-    transactionNumber = hexTodecimal(transactinoNumberData.data.result);
-    console.log(transactionNumber);
+    gasPrice = hexTodecimal(eth_gasPrice_Data.data.result);
+    const gweiValue = ethers.utils.formatUnits(gasPrice, "gwei");
+    const roundedValue = Math.round(gweiValue);
+    setGasPrice(roundedValue);
   };
   getEtherPrice();
   useEffect(() => {
@@ -102,7 +105,7 @@ const LiveData = () => {
               </div>
               <div className="gas-fee">
                 <h5 className="title">GAS PRICE</h5>
-                <p>Gwei</p>
+                <p>{gasPrice} Gwei</p>
               </div>
             </div>
             <hr />
