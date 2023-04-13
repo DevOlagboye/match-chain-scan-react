@@ -15,15 +15,17 @@ const NavBar = () => {
   let newWallet = localStorage.getItem("walletKey");
   let [mainBalance, setBalance] = useContext(WalletContext);
   const provider = new ethers.providers.Web3Provider(window.ethereum);
+  const [chainID, setChainID] = useState(null);
+  //const chainID = 11155111;
   const connectWallet = async (e) => {
     e.preventDefault();
+    setChainID(await provider.getNetwork());
     const accounts = await provider.send("eth_requestAccounts", []);
     const balance = await provider.getBalance(accounts[0]);
     const balanceInEther = ethers.utils.formatEther(balance);
     mainBalance = balanceInEther;
     wallet = localStorage.setItem("walletKey", accounts[0]);
     setWallet(wallet);
-    console.log(wallet);
     window.location.reload();
   };
 
@@ -32,6 +34,11 @@ const NavBar = () => {
     localStorage.removeItem("transactionList");
     window.location.reload();
   };
+  useEffect(() => {
+    if (chainID !== 11155111) {
+      alert("Kindly Connect to Sepolia");
+    }
+  }, []);
   return (
     <>
       <header className="header-container">

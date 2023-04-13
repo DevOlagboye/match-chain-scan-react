@@ -33,6 +33,7 @@ const LiveData = () => {
   let [wallet, setWallet] = useContext(WalletContext);
   let newWallet = localStorage.getItem("walletKey");
   let [mainBalance, setBalance] = useContext(WalletContext);
+  let [transactionNumber, setTransactionNumber] = useState(null);
   const labels = ["January", "February", "March"];
   let [price, setPrice] = useState("");
   const options = {
@@ -48,8 +49,6 @@ const LiveData = () => {
   };
 
   const getEtherPrice = async () => {
-    const hexTodecimal = (hex) => parseInt(hex, 16);
-    const dec1 = hexTodecimal("0x6f");
     //console.log(dec1);
     try {
       const data = await axios.get(
@@ -72,8 +71,18 @@ const LiveData = () => {
       },
     ],
   };
+  const getTransactionNumber = async () => {
+    const transactinoNumberData = await axios.get(
+      `https://api-sepolia.etherscan.io/api?module=proxy&action=eth_getTransactionCount&address=${newWallet}&tag=latest&apikey=${process.env.REACT_APP_API_KEY}`
+    );
+    const hexTodecimal = (hex) => parseInt(hex, 16);
+    transactionNumber = hexTodecimal(transactinoNumberData.data.result);
+    console.log(transactionNumber);
+  };
   getEtherPrice();
-
+  useEffect(() => {
+    getTransactionNumber();
+  }, []);
   return (
     <>
       <div className="live-data-container">
