@@ -1,11 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import transactionImage from "../../Assets/images/icon_transaction.png";
 import blockImage from "../../Assets/images/icon_block.png";
-import {
-  WalletContext,
-  BalanceContext,
-  TranSactionsContext,
-} from "../../Context/WalletContext";
+import { WalletContext } from "../../Context/WalletContext";
 import axios from "axios";
 import {
   Chart as ChartJS,
@@ -31,10 +27,10 @@ ChartJS.register(
 );
 
 const LiveData = () => {
-  let [wallet, setWallet] = useContext(WalletContext);
+  //let [wallet, setWallet] = useContext(WalletContext);
   let newWallet = localStorage.getItem("walletKey");
-  let [mainBalance, setBalance] = useContext(WalletContext);
-  let [gasPrice, setGasPrice] = useState(null);
+  //let [mainBalance, setBalance] = useContext(WalletContext);
+  let [gasPrice, setGasPrice] = useState();
   let [ethLatestBlock, setEthLatestBlock] = useState("");
   const labels = ["January", "February", "March", "April"];
   let [price, setPrice] = useState("");
