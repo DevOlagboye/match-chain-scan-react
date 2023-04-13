@@ -63,6 +63,12 @@
   color: #939ca5;
 }
 
+.wallet-address {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 160px;
+}
+
 .line-graph {
   margin-top: -10px;
   width: 50%;

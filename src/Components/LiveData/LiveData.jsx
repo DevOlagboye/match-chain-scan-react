@@ -74,7 +74,7 @@ const LiveData = () => {
       },
     ],
   };
-  const getTransactionNumber = async () => {
+  const getGasPrice = async () => {
     const eth_gasPrice_Data = await axios.get(
       `https://api.etherscan.io/api?module=proxy&action=eth_gasPrice&apikey=${process.env.REACT_APP_API_KEY}`
     );
@@ -96,7 +96,7 @@ const LiveData = () => {
   };
   getEtherPrice();
   useEffect(() => {
-    getTransactionNumber();
+    getGasPrice();
     getBlockNumber();
   }, []);
   return (
@@ -132,7 +132,7 @@ const LiveData = () => {
               </div>
               <div className="gas-fee">
                 <h5 className="title">WALLET ADDRESS</h5>
-                <p>123</p>
+                <p className="wallet-address">{newWallet}</p>
               </div>
             </div>
           </div>
