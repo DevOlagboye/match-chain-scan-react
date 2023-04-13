@@ -3,10 +3,43 @@
   background: #f8f9fa;
 }
 
+.logo-text {
+  display: flex;
+  gap: 10px;
+}
+
 .eth-footer {
   width: 20px;
 }
 
 .footer-details {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.footer-text {
+  font-size: 14px;
+}
+
+.company-footer > h5,
+.community-footer > h5,
+.products-footer > h5 {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.company-footer > ul li,
+.community-footer > ul li,
+.products-footer > ul li {
+  list-style: none;
+  margin-left: -35px;
+  margin-top: 20px;
+}
+
+.company-footer > ul li a,
+.community-footer > ul li a,
+.products-footer > ul li a {
+  text-decoration: none;
+  color: #000;
 }

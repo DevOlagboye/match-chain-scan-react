@@ -7,9 +7,11 @@ const Footer = () => {
     <div className="footer-container">
       <div className="footer-details">
         <div className="footer-powered">
-          <img src={ethLogo} alt="Ethereum Logo" className="eth-footer" />
-          <h5>Powered by Ethereum</h5>
-          <p>
+          <div className="logo-text">
+            <img src={ethLogo} alt="Ethereum Logo" className="eth-footer" />
+            <h5>Powered by Ethereum</h5>
+          </div>
+          <p className="footer-text">
             Etherscan is a Block Explorer and Analytics Platform for Ethereum,{" "}
             <br />a decentralized smart contracts platform.
           </p>
