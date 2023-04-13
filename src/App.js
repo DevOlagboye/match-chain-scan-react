@@ -6,6 +6,7 @@ import LiveData from "./Components/LiveData/LiveData";
 import { WalletContext, BalanceContext, TranSactionsContext } from "./Context/WalletContext";
 import { useState } from "react";
 import LiveBlock from "./Components/LiveBlock/LiveBlock";
+import Footer from "./Components/Footer/Footer";
 
 function App() {
   const [wallet, setWallet] = useState(null);
@@ -19,6 +20,7 @@ function App() {
         <Explorer />
         <LiveData />
         <LiveBlock />
+        <Footer/>
       </WalletContext.Provider>{" "}
     </BalanceContext.Provider>
     </TranSactionsContext.Provider>
