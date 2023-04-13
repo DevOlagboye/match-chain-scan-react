@@ -46,8 +46,7 @@ const LiveBlock = () => {
     if (newWallet) {
       getTranList();
     } else {
-      console.log("Kindly Connect your wallet and Switch to Sepolia Network");
-      //alert("Kindly Connect your wallet and Switch to Sepolia Network");
+      alert("Kindly Connect your wallet and Switch to Sepolia Network");
     }
   }, []);
   return (
