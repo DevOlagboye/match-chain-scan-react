@@ -73,3 +73,10 @@
   margin-top: -10px;
   width: 50%;
 }
+
+@media (max-width: 600px) {
+  .live-data-container {
+    width: 100%;
+    margin-left: 0px;
+  }
+}
