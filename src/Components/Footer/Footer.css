@@ -1,0 +1,12 @@
+.footer-container {
+  padding: 50px;
+  background: #f8f9fa;
+}
+
+.eth-footer {
+  width: 20px;
+}
+
+.footer-details {
+  display: flex;
+}
