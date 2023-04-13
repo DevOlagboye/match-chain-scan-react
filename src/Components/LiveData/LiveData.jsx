@@ -104,7 +104,9 @@ const LiveData = () => {
       <div className="live-data-container">
         <div className="personal-details">
           <h5 className="eth-price">ETH Price: {price}</h5>
-          <h5>Address: {newWallet ? `${newWallet}` : " "}</h5>
+          <h5 className="wallet-top">
+            Address: {newWallet ? `${newWallet}` : " "}
+          </h5>
         </div>
         <div className="data-container">
           <div className="blocks-data">

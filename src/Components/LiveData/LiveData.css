@@ -80,4 +80,15 @@
     width: 100%;
     margin-left: 0px;
   }
+  .wallet-top {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+  }
+  .line-graph {
+    display: none !important;
+  }
+  .transactions {
+    width: 100%;
+  }
 }
