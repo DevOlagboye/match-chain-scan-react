@@ -55,7 +55,7 @@ const LiveBlock = () => {
           {minedBlocks.length < 1
             ? "No Blocks Mined Yet"
             : minedBlocks.map((minedBlock) => (
-                <div className="blocks-details">
+                <div className="blocks-details" key={minedBlock.blockNumber}>
                   <div className="block-box">
                     <img src={blockImage} alt="" className="block-box-image" />
                   </div>

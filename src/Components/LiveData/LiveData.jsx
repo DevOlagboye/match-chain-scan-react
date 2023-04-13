@@ -48,6 +48,9 @@ const LiveData = () => {
   };
 
   const getEtherPrice = async () => {
+    const hexTodecimal = (hex) => parseInt(hex, 16);
+    const dec1 = hexTodecimal("0x6f");
+    //console.log(dec1);
     try {
       const data = await axios.get(
         `https://api-sepolia.etherscan.io/api?module=stats&action=ethprice&apikey=${process.env.REACT_APP_API_KEY}`
