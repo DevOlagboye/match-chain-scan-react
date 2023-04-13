@@ -1,12 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import { ethers } from "ethers";
-import {
-  WalletContext,
-  BalanceContext,
-  TranSactionsContext,
-} from "../../Context/WalletContext";
+import { WalletContext } from "../../Context/WalletContext";
 import matchLabs from "../../Assets/images/match_logo.svg";
-import axios from "axios";
 import "./NavBar.css";
 
 const NavBar = () => {
@@ -15,7 +10,7 @@ const NavBar = () => {
   let newWallet = localStorage.getItem("walletKey");
   let [mainBalance, setBalance] = useContext(WalletContext);
   const provider = new ethers.providers.Web3Provider(window.ethereum);
-  let [chainID, setChainID] = useState(null);
+  //let [chainID, setChainID] = useState();
   //const chainID = 11155111;
   const connectWallet = async (e) => {
     e.preventDefault();
@@ -33,12 +28,6 @@ const NavBar = () => {
     localStorage.removeItem("transactionList");
     window.location.reload();
   };
-  useEffect(() => {
-    //  if (chainID !== 11155111) {
-    //  alert("Kindly Connect to Sepolia");
-    // }
-    console.log(chainID);
-  }, []);
   return (
     <>
       <header className="header-container">
