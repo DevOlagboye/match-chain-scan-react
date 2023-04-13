@@ -31,7 +31,11 @@ const LiveBlock = () => {
       tranSactionLists = transactionList.data.result;
       //tranLists = filteredList;
       console.log(filteredList);
-      setTranSactionLists(filteredList);
+      if (filteredList === "Max rate limit reached") {
+        alert("Max API Call/Sec limit reached");
+      } else {
+        setTranSactionLists(filteredList);
+      }
       //setTranLists(tranLists);
       //console.log(JSON.parse(transactionstoredList));
     } catch (e) {
