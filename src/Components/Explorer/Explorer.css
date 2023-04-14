@@ -64,17 +64,17 @@
 }
 
 @media (max-width: 600px) {
-  .explorer-search-input input {
-    width: 300px;
-  }
-}
-
-@media (max-width: 600px) {
   .explorer-text {
     padding: 50px 0px 0px 10px;
   }
   .explorer-search-input {
     padding: 10px 0px 0px 10px;
     justify-content: center;
+  }
+  .explorer-search-input input {
+    width: 300px;
+  }
+  .explorer-search-input button {
+    margin-left: -20px;
   }
 }
