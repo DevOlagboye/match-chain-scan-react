@@ -73,4 +73,8 @@
   .explorer-text {
     padding: 50px 0px 0px 10px;
   }
+  .explorer-search-input {
+    padding: 10px 0px 0px 10px;
+    justify-content: center;
+  }
 }
