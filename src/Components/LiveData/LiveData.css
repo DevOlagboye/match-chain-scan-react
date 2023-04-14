@@ -84,12 +84,18 @@
   .wallet-top {
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 200px;
+    max-width: 150px;
   }
   .line-graph {
     display: none !important;
   }
   .blocks-data {
     width: 100%;
+  }
+  .personal-details {
+    gap: 30px;
+  }
+  .transactions {
+    margin-top: -10px;
   }
 }
