@@ -68,3 +68,9 @@
     width: 300px;
   }
 }
+
+@media (max-width: 600px) {
+  .explorer-text {
+    padding: 50px 0px 0px 10px;
+  }
+}
