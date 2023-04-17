@@ -61,7 +61,7 @@ const LiveBlock = () => {
                     <img src={blockImage} alt="" className="block-box-image" />
                   </div>
                   <a
-                    href={`https://sepolia.etherscan.io/${transactionList.blockNumber}`}
+                    href={`https://sepolia.etherscan.io/block/${transactionList.blockNumber}`}
                     className="block-link"
                   >
                     {transactionList.blockNumber}
