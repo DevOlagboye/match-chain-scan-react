@@ -4,7 +4,7 @@
 
 .latest-block {
   width: 600px;
-  height: 300px;
+  max-height: 450px;
   padding: 10px;
   background: #fff;
   border-radius: 15px;
@@ -56,6 +56,10 @@
   align-items: center;
 }
 
+.mined {
+  margin-top: 40px;
+}
+
 .block-link {
   margin-right: 100px;
   text-decoration: none;
@@ -67,7 +71,7 @@
   color: #fe891b;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 250px;
+  max-width: 320px;
 }
 
 .block-address {

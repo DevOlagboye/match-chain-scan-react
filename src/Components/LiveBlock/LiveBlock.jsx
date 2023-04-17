@@ -7,16 +7,8 @@ import "./LiveBlock.css";
 import { ethers } from "ethers";
 
 const LiveBlock = () => {
-  let [minedBlocks, setMinedBlocks] = useState([]);
   let [tranSactionLists, setTranSactionLists] = useState([]);
   let newWallet = localStorage.getItem("walletKey");
-  const getMinedBlocks = async () => {
-    let getMinedBlocksData = await axios.get(
-      `https://api-sepolia.etherscan.io/api?module=account&action=getminedblocks&address=${newWallet}&blocktype=blocks&page=1&offset=10&apikey=${process.env.REACT_APP_API_KEY}`
-    );
-    minedBlocks = getMinedBlocksData.data.result;
-    console.log(getMinedBlocksData.data);
-  };
   const getTranList = async () => {
     try {
       let transactionList = await axios.get(
@@ -45,7 +37,6 @@ const LiveBlock = () => {
   useEffect(() => {
     if (newWallet) {
       getTranList();
-      getMinedBlocks();
     } else {
       alert("Kindly Connect your wallet and Switch to Sepolia Network");
     }
@@ -63,7 +54,7 @@ const LiveBlock = () => {
             ? "No Blocks Mined Yet"
             : tranSactionLists.map((transactionList) => (
                 <div
-                  className="blocks-details"
+                  className="blocks-details mined"
                   key={transactionList.blockNumber}
                 >
                   <div className="block-box">
