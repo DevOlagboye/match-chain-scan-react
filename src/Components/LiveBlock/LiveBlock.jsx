@@ -45,6 +45,7 @@ const LiveBlock = () => {
   useEffect(() => {
     if (newWallet) {
       getTranList();
+      getMinedBlocks();
     } else {
       alert("Kindly Connect your wallet and Switch to Sepolia Network");
     }
@@ -58,18 +59,21 @@ const LiveBlock = () => {
             <h5>Latest Blocks</h5>
           </div>
           <hr className="latest-block-hr" />
-          {minedBlocks.length < 1
+          {tranSactionLists.length < 1
             ? "No Blocks Mined Yet"
-            : minedBlocks.map((minedBlock) => (
-                <div className="blocks-details" key={minedBlock.blockNumber}>
+            : tranSactionLists.map((transactionList) => (
+                <div
+                  className="blocks-details"
+                  key={transactionList.blockNumber}
+                >
                   <div className="block-box">
                     <img src={blockImage} alt="" className="block-box-image" />
                   </div>
                   <a
-                    href={`https://sepolia.etherscan.io/${minedBlock.blockNumber}`}
+                    href={`https://sepolia.etherscan.io/${transactionList.blockNumber}`}
                     className="block-link"
                   >
-                    {minedBlock.blockNumber}
+                    {transactionList.blockNumber}
                   </a>
                   <a
                     href={`https://sepolia.etherscan.io/${newWallet}`}
