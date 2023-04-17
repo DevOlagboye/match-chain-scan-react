@@ -62,6 +62,14 @@
   color: #fe891b;
 }
 
+.block-mine-address {
+  text-decoration: none;
+  color: #fe891b;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 250px;
+}
+
 .block-address {
   text-decoration: none;
   color: #fe891b;

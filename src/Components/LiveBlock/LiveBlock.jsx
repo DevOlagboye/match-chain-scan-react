@@ -77,7 +77,7 @@ const LiveBlock = () => {
                   </a>
                   <a
                     href={`https://sepolia.etherscan.io/${newWallet}`}
-                    className="block-address"
+                    className="block-mine-address"
                   >
                     {newWallet}
                   </a>
