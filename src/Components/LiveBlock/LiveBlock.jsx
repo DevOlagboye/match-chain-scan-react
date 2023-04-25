@@ -99,7 +99,7 @@ const LiveBlock = () => {
                     >
                       {tranList.blockNumber}
                     </a>
-                    <p>TimeStamp</p>
+                    <p></p>
                     <div className="address-to-from">
                       <p>From:</p>
                       <a
