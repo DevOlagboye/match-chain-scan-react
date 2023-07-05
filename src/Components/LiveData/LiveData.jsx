@@ -32,7 +32,9 @@ const LiveData = () => {
   //let [mainBalance, setBalance] = useContext(WalletContext);
   let [gasPrice, setGasPrice] = useState();
   let [ethLatestBlock, setEthLatestBlock] = useState("");
-  const labels = ["January", "February", "March", "April"];
+  const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  const monthNumber = new Date()
+  const labels = ["January", "February", "March", `${months[monthNumber.getMonth()]}`];
   let [price, setPrice] = useState("");
   const options = {
     responsive: true,
