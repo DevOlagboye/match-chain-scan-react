@@ -34,7 +34,7 @@ const LiveData = () => {
   let [ethLatestBlock, setEthLatestBlock] = useState("");
   const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
   const monthNumber = new Date()
-  const labels = ["January", "February", "March", `${months[monthNumber.getMonth()]}`];
+  const labels = ["January", `${months[monthNumber.getMonth()-2]}`, `${months[monthNumber.getMonth()-1]}`, `${months[monthNumber.getMonth()]}`];
   let [price, setPrice] = useState("");
   const options = {
     responsive: true,
