@@ -96,7 +96,7 @@ const LiveData = () => {
   useEffect(() => {
     getGasPrice();
     getBlockNumber();
-  }, []);
+  }, [price]);
   return (
     <>
       <div className="live-data-container">
