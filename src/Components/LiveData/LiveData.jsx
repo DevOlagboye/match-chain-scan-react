@@ -32,9 +32,27 @@ const LiveData = () => {
   //let [mainBalance, setBalance] = useContext(WalletContext);
   let [gasPrice, setGasPrice] = useState();
   let [ethLatestBlock, setEthLatestBlock] = useState("");
-  const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-  const monthNumber = new Date()
-  const labels = ["January", `${months[monthNumber.getMonth()-2]}`, `${months[monthNumber.getMonth()-1]}`, `${months[monthNumber.getMonth()]}`];
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  const monthNumber = new Date();
+  const labels = [
+    "January",
+    `${months[monthNumber.getMonth() - 2]}`,
+    `${months[monthNumber.getMonth() - 1]}`,
+    `${months[monthNumber.getMonth()]}`,
+  ];
   let [price, setPrice] = useState("");
   const options = {
     responsive: true,
@@ -91,9 +109,11 @@ const LiveData = () => {
     ethLatestBlock = `${ethConvertedBlockNumber.toLocaleString()}`;
     //console.log(`${ethConvertedBlockNumber.toLocaleString()}`);
     setEthLatestBlock(ethLatestBlock);
+    console.log(ethLatestBlock);
   };
-  getEtherPrice();
+
   useEffect(() => {
+    getEtherPrice();
     getGasPrice();
     getBlockNumber();
   }, [price]);
@@ -103,7 +123,7 @@ const LiveData = () => {
         <div className="personal-details">
           <h5 className="eth-price">ETH Price: {price}</h5>
           <h5 className="wallet-top">
-            Address: {newWallet ? `${newWallet}` : " "}
+            Address: {newWallet ? `${newWallet}` : "Wallet Not Connected"}
           </h5>
         </div>
         <div className="data-container">
@@ -132,7 +152,9 @@ const LiveData = () => {
               </div>
               <div className="gas-fee">
                 <h5 className="title">WALLET ADDRESS</h5>
-                <p className="wallet-address">{newWallet}</p>
+                <p className="wallet-address">
+                  {newWallet ? `${newWallet}` : "Wallet not Connected"}
+                </p>
               </div>
             </div>
           </div>

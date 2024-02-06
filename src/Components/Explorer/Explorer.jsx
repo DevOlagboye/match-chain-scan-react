@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import "./Explorer.css";
+import { Spin } from "antd";
 import axios from "axios";
 import { ethers } from "ethers";
 
@@ -18,6 +19,7 @@ const Explorer = () => {
     walletBalance = weiBalanceToEther;
     setWalletBalance(weiBalanceToEther);
     textRef.current.innerHTML = `Your wallet balance is: ${weiBalanceToEther} ETH`;
+
     console.log(weiBalanceToEther);
   };
 
